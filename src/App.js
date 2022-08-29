@@ -3,6 +3,7 @@ import Tweet from "./components/Tweet";
 
 const tweetsArray = [
   {
+    key: 1,
     user: {
       name: "Thoughts of Dog®",
       image: "https://i.imgur.com/b0EdHVV.jpg",
@@ -13,6 +14,7 @@ const tweetsArray = [
       "the human likes to say. that i live here rent free. but i would argue. this housing accommodation. is my payment. for a lifetime of love. and excellent company",
   },
   {
+    key: 2,
     user: {
       name: "Thoughts of Dog®",
       image: "https://i.imgur.com/b0EdHVV.jpg",
@@ -23,6 +25,7 @@ const tweetsArray = [
       "sometimes. the human presses their noggin against mine. to figure out what i’m thinking. so i just think really hard. about how much i love them. and hope they figure it out",
   },
   {
+    key: 3,
     user: {
       name: "Thoughts of Dog®",
       image: "https://i.imgur.com/b0EdHVV.jpg",
@@ -37,7 +40,9 @@ const tweetsArray = [
 function App() {
   return (
     <div className="App">
-      <Tweet />
+      {tweetsArray.map(tweet => {
+        return <Tweet key={tweet.key} name={tweet.user.name} image={tweet.user.image} handle={tweet.user.handle} timestamp={tweet.timestamp} message={tweet.message}/>
+      })}
     </div>
   );
 }
